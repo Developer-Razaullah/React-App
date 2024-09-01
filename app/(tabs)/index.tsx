@@ -1,50 +1,33 @@
 import { Image, StyleSheet, Platform } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+    <ParallaxScrollView 
+      headerBackgroundColor={{ light: '#fff', dark: '#1D3D47' }}
       headerImage={
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
+          source={require('@/assets/images/laptop.jpg')}
           style={styles.reactLogo}
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
+        <ThemedText type="title" style={styles.title}>Laptop Information Web Page</ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
+        <ThemedText type="subtitle">Laptop</ThemedText>
+        <ThemedText>Laptops are designed to be portable computers. They are smaller and lighter than desktops. The name connotes the user's ability to put the computer in their lap while they use it. Laptops have rechargeable batteries that can be used for a set period away from a power source.</ThemedText>
+        <ThemedText type="subtitle">Different types of laptops</ThemedText>
+        <ThemedText>1. General purpose or everyday laptops</ThemedText>
+        <ThemedText>2. Ultrabooks</ThemedText>
+        <ThemedText>3. Gaming laptops</ThemedText>
+        <ThemedText>4. Workstation or creator laptops</ThemedText>
+        <ThemedText>5. 2-in-1s and convertibles</ThemedText>
+        <ThemedText>6. Chromebooks</ThemedText>
+        <ThemedText>7. Foldable laptops</ThemedText>
       </ThemedView>
     </ParallaxScrollView>
   );
@@ -56,15 +39,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
   },
+  title: {
+    color: 'green',
+    flex: 1,
+    textAlign: 'center',
+  },
   stepContainer: {
     gap: 8,
     marginBottom: 8,
   },
   reactLogo: {
-    height: 178,
-    width: 290,
+    height: 250,
+    width: 600,
     bottom: 0,
-    left: 0,
+    left: 400,
     position: 'absolute',
   },
 });
